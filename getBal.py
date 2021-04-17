@@ -12,7 +12,7 @@ w3 = Web3(Web3.HTTPProvider(GANACHE))
 
 print(w3.isConnected())
 
-add = 'ADDRESS'
+add = 'address'
 
 w3.isAddress(add)
 
