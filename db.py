@@ -4,7 +4,7 @@ import sqlite3
 
 
 def add_new_wallet(add, pk):
-    con = sqlite3.connect('example.db')
+    con = sqlite3.connect('db.db')
     cur = con.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS wallets (address text, privateKey text, value number)""")
     print(pk)
