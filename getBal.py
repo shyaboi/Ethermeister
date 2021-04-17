@@ -12,15 +12,11 @@ w3 = Web3(Web3.HTTPProvider(GANACHE))
 
 print(w3.isConnected())
 
-add = w3.eth.account.create('New Ethereum wallet added!')
-
-pk = add._private_key
-
-print(add._private_key.hex)
+add = 'ADDRESS'
 
 w3.isAddress(add)
 
-wei_bal = w3.eth.getBalance(add._address)
+wei_bal = w3.eth.getBalance(add)
 
 print(wei_bal)
 
@@ -28,12 +24,7 @@ w3.eth.default_account = add
 
 eth_bal = w3.fromWei(wei_bal, 'ether')
 
-nonce = w3.eth.getTransactionCount(add._address)
+nonce = w3.eth.getTransactionCount(add)
 
 print(eth_bal)
-
-print(w3.eth.default_account._address)
-
-print(add._private_key.hex)
-
-add_new_wallet(add._address, add._private_key.hex())
+print(nonce)
