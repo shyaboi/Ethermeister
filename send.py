@@ -29,16 +29,16 @@ def send_eth(receiver_add):
     tx = {
         'nonce':nonce,
         'to': receiver_add,
-        'value': web3.toWei(5.22, 'ether'),
+        'value': web3.toWei(1, 'ether'),
         'gas':200000,
-        'gasPrice': web3.toWei('1', 'wei')
+        'gasPrice': web3.toWei('109', 'wei')
     }
 
 
 
 
     signed_tx = web3.eth.account.signTransaction(tx, sender_pk)
-    tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
-    print(web3.toHex(tx_hash))
-
+    web3.eth.sendRawTransaction(signed_tx.rawTransaction)
+    printable_tx_hash = web3.toHex(signed_tx['hash'])
+    return printable_tx_hash
     # update_bal(receiver_add)
